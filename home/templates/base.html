@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>{% block title %}Curioso{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://use.fontawesome.com/6fd04d4978.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+{% include "curiosoblog/messages.html" %}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="">Curioso</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="{% url "curiosoblog:list" %}">Blog</a></li>
+        <li><a href="#">Comic</a></li>
+        <li><a href="#">Courses</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if not request.user.is_authenticated %}
+        <li><a href="{% url "register" %}">Register</a></li>
+        <li><a href="{% url "login" %}">Login</a></li>
+          {% else %}
+          <li><a href="{% url "logout" %}">Logout</a></li>
+        {% endif %}
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+{% block content %}
+
+{% endblock content %}
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+    <div class="row">
+        <div class="col-sm-4">
+          <span>&copy; 2017 Curioso</span>
+      </div>
+
+      <div class="col-sm-4">
+          <a href="">Users Manual</a>&nbsp &nbsp
+          <a href="">Privacy</a>&nbsp &nbsp
+          <a href="">Feedback</a>&nbsp
+      </div>
+
+      <div class="col-sm-4 text-right">
+        <a href="#"><i class="fa fa-facebook fa-2x"></i>&nbsp;</a> |&nbsp;
+           <a href="#"><i class="fa fa-twitter fa-2x"></i>&nbsp;</a> |&nbsp;
+           <a href="#"><i class="fa fa-linkedin-square fa-2x"></i>&nbsp;</a>
+      </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
