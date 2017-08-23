@@ -1,0 +1,18 @@
+{% extends "curiosoblog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class='col-sm-6 col-sm-offset-3'>
+<h1 align="center">{{ title }}</h1>
+<p align="center">For better experience and regular updates Signup with curioso</p>
+  <hr/>
+  <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+    {{ form|crispy }}
+    <input type='submit' align="right" class="btn btn-primary center-block" value='Signup' />
+<hr/>
+    <p align="center">(We won't share anything without your permission)</p>
+  </form>
+</div>
+
+{% endblock content %}
