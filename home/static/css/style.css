@@ -109,11 +109,11 @@ body{
     color: #fff !important;
 }
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #f4511e !important;
-    background-color: #fff !important;
+    color: #bbb !important;
+    /*background-color: #fff !important;*/
 }
 .navbar-default .navbar-toggle {
-    border-color: transparent;
+    border-color: transparent
     color: #fff !important;
 }
 footer .glyphicon {
