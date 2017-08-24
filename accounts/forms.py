@@ -38,6 +38,7 @@ class UserRegisterForm(forms.ModelForm):
 	password = forms.CharField(widget=forms.PasswordInput)
 	password2 = forms.CharField(widget=forms.PasswordInput, label='confirm Password')
 
+
 	class Meta:
 	    model = User
 	    fields = [
@@ -49,6 +50,7 @@ class UserRegisterForm(forms.ModelForm):
 				'password',
 				'password2'
 	            ]
+
 
 
 	def clean_email2(self):

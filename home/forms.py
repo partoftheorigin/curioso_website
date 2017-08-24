@@ -1,8 +1,10 @@
 from django import forms
+from pagedown.widgets import PagedownWidget
 from .models import Feedback
 from .models import Writeforus
 
 class FeedbackForm(forms.ModelForm):
+    
 
     class Meta:
         model = Feedback
@@ -27,4 +29,5 @@ class WriteforusForm(forms.ModelForm):
         "title",
         "image",
         "category",
+        "content"
         ]
