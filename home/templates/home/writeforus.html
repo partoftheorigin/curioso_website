@@ -2,15 +2,19 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
-<div class='col-sm-6 col-sm-offset-3'>
-<h1 align="center">Feedback</h1>
+<br><br>
+<div class='col-sm-6 col-sm-offset-3 w3-card-4 w3-section'>
+    <br><br>
+<h1 align="center">Write For Us</h1>
 <p align="center">For better experience and regular updates Signup with curioso</p>
   <hr/>
   <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
     {{ form|crispy }}
-    <input type='submit' class='btn btn-default' value='Submit Details' />
+    <input type='submit' class='btn btn-primary center-block' value='Submit Details' />
+    <hr/>
+    <p align="center">(We won't share anything without your permission)</p>
   </form>
+  <br>
 </div>
 
 {% endblock content %}
