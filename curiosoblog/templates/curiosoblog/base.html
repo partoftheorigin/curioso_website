@@ -1,39 +1,76 @@
 {% load staticfiles %}
-
+<html>
 <head>
   <title>{% block head_title %}Solo Curioso{% endblock head_title %}</title>
-
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel='stylesheet' href='{% static "curiosoblog/css/base.css" %}' />
-
     <style>
       {% block style %}{% endblock style %}
     </style>
       {% block head_extra %}{% endblock head_extra %}
-
 </head>
 
 {% include "curiosoblog/messages.html" %}
-  <div class='container'>
-      <ol class="breadcrumb">
-        <li><a href="{% url "curiosoblog:list" %}"> Home</a></li>
-        {% block post_detail_link %}
-        {% endblock %}
-        {% if not request.user.is_authenticated %}
-        <li class="pull-right"><a href="{% url "register" %}">Register</a></li>
-        <li class="pull-right"><a href="{% url "login" %}">Login</a></li>
-          {% else %}
-          <li class="pull-right"><a href="{% url "logout" %}">Logout</a></li>
-        {% endif %}
 
-      </ol>
-    {% block content %} {% endblock content %}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url "home:index" %}">Curioso</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="{% url "curiosoblog:list" %}">Blog</a></li>
+        <li><a href="#">Comic</a></li>
+        <li><a href="#">Courses</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if not request.user.is_authenticated %}
+        <li><a href="{% url "register" %}">Register</a></li>
+        <li><a href="{% url "login" %}">Login</a></li>
+          {% else %}
+          <li><a href="{% url "logout" %}">Logout</a></li>
+        {% endif %}
+      </ul>
+    </div>
   </div>
+</nav>
+
+{% block content %}
+
+{% endblock content %}
+<br><br>
+<footer class="container-fluid text-center">
+
+    <div class="row">
+        <div class="col-sm-4">
+          <span>&copy; 2017 Curioso</span>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="{% url "home:guide" %}">Users Manual</a>&nbsp &nbsp
+            <a href="{% url "home:privacy" %}">Privacy</a>&nbsp &nbsp
+            <a href="{% url "home:feedback" %}">Feedback</a>&nbsp
+            <a href="{% url "home:writeforus" %}">Write for us</a>&nbsp &nbsp
+            <a href="{% url "home:career" %}">Career</a>&nbsp &nbsp
+            <a href="{% url "home:aboutus" %}">About Us </a>&nbsp
+        </div>
+
+        <div class="col-sm-4 text-right">
+          <a href="#"><i class="fa fa-facebook fa-2x"></i>&nbsp;</a> |&nbsp;
+             <a href="#"><i class="fa fa-twitter fa-2x"></i>&nbsp;</a> |&nbsp;
+             <a href="#"><i class="fa fa-linkedin-square fa-2x"></i>&nbsp;</a>
+        </div>
+    </div>
+    <br><br>
+</footer>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
