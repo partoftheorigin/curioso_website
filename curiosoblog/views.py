@@ -8,7 +8,6 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.db.models import Q
-from django.views.generic import RedirectView
 
 from comments.models import Comment
 from comments.forms import CommentForm
@@ -89,8 +88,6 @@ def detail(request, slug=None):
     }
 
     return render(request, "curiosoblog/detail.html", context)
-
-
 
 def list(request):
     today = timezone.now().date()

@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'pagedown',
     'markdown_deux',
     'crispy_forms',
-    #'rest_framework',
-    'comments',
+    'comments',#app
     'home',
     'curiosoblog'
 ]

@@ -24,11 +24,10 @@ class Writeforus(models.Model):
     lastname = models.CharField(max_length=120)
     Email = models.EmailField()
     Profile = models.CharField(max_length=120)
-    Linkedin_Profile = models.CharField(max_length=120, blank=True)
+    Linkedin_Profile = models.CharField(max_length=120)
     title = models.CharField(max_length=120)
     image = models.ImageField()
     category= models.CharField(max_length=120)
-    content = models.FileField()
 
 
 
