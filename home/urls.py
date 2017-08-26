@@ -17,3 +17,4 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
 
 ]
+handler404 = 'curiosoblog.views.handler404'

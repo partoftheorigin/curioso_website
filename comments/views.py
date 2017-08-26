@@ -40,6 +40,11 @@ def comment_thread(request, id):
     except:
         raise Http404
 
+    if not obj.user == request.user:
+        response = HttpResponse("You do not have permission to do this!")
+        response.status_code = 403
+        return response
+
     content_object = obj.content_object
     content_id = obj.content_object.id
 
@@ -53,6 +58,7 @@ def comment_thread(request, id):
 
     form = CommentForm(request.POST or None, initial=initial_data)
     if form.is_valid() and request.user.is_authenticated():
+
         c_type = form.cleaned_data.get("content_type")
         content_type = ContentType.objects.get(model=c_type)
         obj_id = form.cleaned_data.get("object_id")
