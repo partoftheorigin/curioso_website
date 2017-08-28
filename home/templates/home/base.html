@@ -1,66 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>{% block title %}Curioso{% endblock %}</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% load staticfiles %}
+    <title>{% block title %}Curioso{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load staticfiles %}
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href={% static 'css/style.css' %}>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href={% static 'css/style.css' %}>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <script src="https://use.fontawesome.com/6fd04d4978.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
+    <script src="https://use.fontawesome.com/6fd04d4978.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
 
   </style>
 </head>
+
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{% url "home:index" %}">Curioso</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="{% url "curiosoblog:list" %}">Blog</a></li>
-        <li><a href="#">Comic</a></li>
-        <li><a href="#">Courses</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        {% if not request.user.is_authenticated %}
-        <li><a href="{% url "register" %}">Register</a></li>
-        <li><a href="{% url "login" %}">Login</a></li>
-          {% else %}
-          <li><a href="{% url "logout" %}">Logout</a></li>
-        {% endif %}
-      </ul>
-
-    </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url "home:index" %}">Curioso</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="{% url "curiosoblog:list" %}">Blog</a></li>
+                <li><a href="#">Comic</a></li>
+                <li><a href="#">Courses</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                {% if not request.user.is_authenticated %}
+                <li><a href="{% url "register" %}">Register</a></li>
+                <li><a href="{% url "login" %}">Login</a></li>
+                {% else %}
+                <li><a href="{% url "logout" %}">Logout</a></li>
+                {% endif %}
+              </ul>
+        </div>
   </div>
 </nav>
-
-
+<!--
+<nav class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav2">
+    <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">CuriosoBlog</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">How to <span   class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Page 1-1</a></li>
+                  <li><a href="#">Page 1-2</a></li>
+                  <li><a href="#">Page 1-3</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">What is? <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Page 1-1</a></li>
+                  <li><a href="#">Page 1-2</a></li>
+                  <li><a href="#">Page 1-3</a></li>
+                </ul>
+            </li>
+        </ul>
+    <form class="navbar-form navbar-right">
+        <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+    </form>
+  </div>
+</nav>
+-->
 
 {% block content %}
 
 {% endblock content %}
 
-<footer class="container-fluid text-center">
-  <a href="#myPage" title="To Top">
+<footer class="container-fluid text-center w3-grey">
+    <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
-    <div class="row">
+    </a>
+    <div class="row " >
         <div class="col-sm-4">
           <span>&copy; 2017 Curioso</span>
         </div>
@@ -81,6 +120,14 @@
         </div>
     </div>
 </footer>
+
+<script>
+    $('#nav2').affix({
+         offset: {
+           top: 50
+         }
+    });
+ </script>
 
 </body>
 </html>

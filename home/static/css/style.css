@@ -2,11 +2,40 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 
+#topNav {
+  margin-bottom:0;
+}
+
+#nav2 {
+  width: 100%;
+}
+
+#nav2.affix-top {
+  position: static;
+}
+
+#nav2.affix {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 2;
+   transition: all .6s ease-in-out;
+   -webkit-transition: all .6s ease-in-out;
+}
+
+.navbar-toggle {
+	outline:0;
+}
+
 .jumbotron {
     background-image: url(../img/banner.jpg);
     color: #fff;
     padding: 100px 25px;
 }
+/*.jumbotron1 {
+    color: #fff;
+   padding: 100px 25px;
+}*/
 
 .font_satisfy{
   font-family: 'Satisfy'

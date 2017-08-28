@@ -9,21 +9,21 @@
 <script src="https://use.fontawesome.com/6fd04d4978.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 {% load crispy_forms_tags %}
 
 {% block content %}
-
-<div class='col-sm-4 col-sm-offset-4 '>
-
-<h1 align="center">Solo Curioso</h1>
-<p align="center">Login here with curioso Username and Password</p>
-  <hr/>
-  <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
-    {{ form|crispy }}
-    <input type='submit' class="btn btn-primary center-block" value='Login' />
-<hr/>
-    <p align="center">(We won't share anything without your permission)</p>
-  </form>
- 
+<br><br><br>
+<div class=' w3-card-4 col-sm-4 col-sm-offset-4 '>
+    <h1 align="center">Solo Curioso</h1>
+    <p align="center">Login here with curioso Username and Password</p>
+      <hr/>
+      <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+        {{ form|crispy }}
+        <input type='submit' class="btn btn-primary center-block" value='Login' />
+        <hr/>
+        <p align="center">New user, signup with Solo Curioso <a href="{% url "register" %}"> Register</a> </p>
+      </form>
+</div>
 
 {% endblock content %}
