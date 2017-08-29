@@ -1,22 +1,23 @@
-{% extends "curiosoblog/base.html" %}
-
-
+{% extends "home/base.html" %}
 {% load crispy_forms_tags %}
 
-{% block content %}
-<br><br>
-<div class='col-sm-6 col-sm-offset-3 w3-card-4 w3-section'>
-<br><br>
-<h1 align="center">nvn</h1>
-<p align="center">For better experience and regular updates Signup with curioso</p>
-  <hr/>
-  <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
-    {{ form|crispy }}
-    <input type='submit'  class="btn btn-primary center-block" value='Signup' />
-<hr/>
-    <p align="center">(We won't share anything without your permission)</p>
-  </form>
-  <br>
-</div>
 
+{% block content %}
+
+    <div class="container ">
+        <div class='col-sm-6 col-sm-offset-3 '>
+            <br><br>
+            <h1 align="center">nvn</h1>
+            <p align="center">For better experience and regular updates Signup with curioso</p>
+            <hr/>
+                <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+                    {{ form|crispy }}
+                    <input type='submit'  class="btn btn-primary center-block" value='Signup' />
+                    <hr/>
+                    <p align="center">(We won't share anything without your permission)</p>
+                </form>
+            <br>
+        </div>
+    </div>
+    
 {% endblock content %}
