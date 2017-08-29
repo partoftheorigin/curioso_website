@@ -3,20 +3,23 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <br><br>
+
+<div class="background-picture">
     <div class="row">
         <br><br><br>
-        <div class=' w3-card-4 col-sm-4 col-sm-offset-4 '>
-            <h1 align="center">Solo Curioso</h1>
-            <p align="center">Login here with curioso Username and Password</p>
-              <hr/>
-              <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
-                {{ form|crispy }}
-                <input type='submit' class="btn btn-primary center-block" value='Login' />
-                <hr/>
-                <p align="center">New user, signup with Solo Curioso <a href="{% url "register" %}"> Register</a> </p>
-              </form>
+        <div class="white">
+            <div class=' w3-card-4 col-sm-4 col-sm-offset-4 '>
+                <h1 align="center">Solo Curioso</h1>
+                <p align="center">Login here with curioso Username and Password</p>
+                  <hr/>
+                  <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+                    {{ form|crispy }}
+                    <input type='submit' class="btn btn-primary center-block" value='Login' />
+                    <hr/>
+                    <p align="center">New user, signup with Solo Curioso <a href="{% url "register" %}"> Register</a> </p>
+                  </form>
+            </div>
         </div>
     </div>
-    <br><br>
+</div>
 {% endblock content %}

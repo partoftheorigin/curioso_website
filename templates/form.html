@@ -1,16 +1,19 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 {% extends 'home/base.html' %}
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 
 {% block content %}
-
+<body>
+<div class="background-picture">
 <div class="row">
     <br><br><br>
-    <div class='col-sm-4 col-sm-offset-4  '>
+    <div class='w3-card-4 col-sm-4 col-sm-offset-4 w3-white'>
             <h1 align="center">{{ title }}</h1>
             <p align="center">For better experience and regular updates Signup with curioso</p>
         <hr/>
-            <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+            <form method='POST' action='onsubmit="myFunction()' enctype='multipart/form-data'>{% csrf_token %}
             {{ form|crispy }}
             <input type='submit'  class="btn btn-primary center-block" value='Signup' />
         <hr/>
@@ -18,6 +21,7 @@
             </form>
     </div>
 </div>
-<br><br>
+</div>
 
+</body>
 {% endblock content %}

@@ -2,6 +2,14 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 
+.background-picture{
+    background-image: url(../img/banner.jpg);
+}
+
+.white{
+        background-color: #f4511e;
+}
+
 #topNav {
   margin-bottom:0;
 }
@@ -137,6 +145,12 @@ body{
 .navbar li a, .navbar .navbar-brand {
     color: #fff !important;
 }
+
+.navbar-brand{
+    font-family: 'Satisfy';
+    font-size: 30px;
+}
+
 .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #f4511e !important;
     background-color: #fff !important;
