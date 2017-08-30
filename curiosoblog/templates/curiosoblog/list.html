@@ -42,7 +42,7 @@ height: 380px;
         </div>
 
         <div class="item">
-            <img src="{% static "curiosoblog/images/solocuriosoblog.png" %}" alt="Image">
+            <img src="http://blog.dieboldnixdorf.com/wp-content/uploads/2016/07/Header-FITbanking-Philosophy-1200x400.jpg" alt="Image">
             <div class="carousel-caption">
             <h3>More Sell $</h3>
             <p>Lorem ipsum...</p>
@@ -83,7 +83,7 @@ height: 380px;
         <div class='col-sm-6 col-md-4 w3-animate-bottom'>
             <div class="thumbnail "  >
                 {% if obj.image %}
-                    <img class="img-responsive" src='{{ obj.image.url }}' height="231"/>
+                    <img class="img-responsive" src='{{ obj.image.url }}'/>
                 {% endif %}
                 <div class="caption post-detail-item">
                     {% if obj.draft %}
@@ -104,10 +104,13 @@ height: 380px;
                     <p>
                         <a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View</a>
                     </p>
+
                 </div>
+                <br>
             </div>
         </div>
     {% endfor %}
+
     </div>
 
     <!--  pagination-->
