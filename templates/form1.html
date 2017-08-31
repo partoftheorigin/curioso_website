@@ -8,7 +8,7 @@
     <div class="row">
         <br><br><br>
         <div class="white">
-            <div class=' w3-card-4 col-sm-4 col-sm-offset-4 '>
+            <div class=' w3-card-4 col-sm-4 col-sm-offset-4 w3-white'>
                 <h1 align="center">Solo Curioso</h1>
                 <p align="center">Login here with curioso Username and Password</p>
                   <hr/>
@@ -16,11 +16,13 @@
                     {{ form|crispy }}
                     <input type='submit' class="btn btn-primary center-block" value='Login' />
                     <hr/>
-                    <p align="center">New user, signup with Solo Curioso <a href="{% url "register" %}"> Register</a> </p>
-                    <p><a href="{% url "password_reset" %}">Forget Password</a> </p>
+                    <p align="center">New user, signup with Solo Curioso <a href="{% url "register" %}"><b><u> Register</u></b></a> </p>
+                    <p><a href="{% url "password_reset" %}"><b><u>Forget Password</u></b></a> </p>
                   </form>
             </div>
         </div>
     </div>
+    <br>
 </div>
+
 {% endblock content %}
