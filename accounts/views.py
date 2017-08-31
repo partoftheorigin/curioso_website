@@ -1,4 +1,6 @@
+from django.conf import settings
 from django.shortcuts import render, redirect
+from django.core.mail import send_mail
 from django.contrib import messages
 from django.contrib.auth import (
 	authenticate,
@@ -34,6 +36,17 @@ def register_view(request):
 		password = form.cleaned_data.get('password')
 		user.set_password(password)
 		user.save()
+
+		#WELCOME MAIL
+		#send_mail(subject, message, from_email, to_list, fail_silentely=True)
+		subject = 'E-Mail verification Curioso'
+		message = 'Welcome to Curioso!! We very much appriciate your support. This is the link to verify your email.'
+		from_email = settings.EMAIL_HOST_USER
+		to_list = [user.email, settings.EMAIL_HOST_USER]
+		send_mail(subject, message, from_email, to_list, fail_silently=False)
+		#mail sended
+		#WELCOME MAIL SCRIPT ENDED
+
 		new_user = authenticate(username=user.username, password=password)
 		login(request, new_user)
 		if next:
