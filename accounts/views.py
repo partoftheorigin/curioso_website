@@ -39,8 +39,8 @@ def register_view(request):
 
 		#WELCOME MAIL
 		#send_mail(subject, message, from_email, to_list, fail_silentely=True)
-		subject = 'E-Mail verification Curioso'
-		message = 'Welcome to Curioso!! We very much appriciate your support. This is the link to verify your email.'
+		subject = 'Welcome to Curioso'
+		message = 'Welcome to Curioso!! We very much appriciate your support. Thanks for being a part of "Curioso Family". Give a boost to your Knowledge of Analytics and Machine Learning.'
 		from_email = settings.EMAIL_HOST_USER
 		to_list = [user.email, settings.EMAIL_HOST_USER]
 		send_mail(subject, message, from_email, to_list, fail_silently=False)
