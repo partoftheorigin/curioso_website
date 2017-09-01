@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'comments',#app
     'home',
     'curiosoblog'
+
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
