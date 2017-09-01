@@ -11,6 +11,7 @@ from markdown_deux import markdown
 from comments.models import Comment
 from .utils import get_read_time
 
+
 def upload_location(instance, filename):
     #filebase, extension = filename.split(".")
     #return "%s/%s.%s" %(instance.id, instance.id, extension)
