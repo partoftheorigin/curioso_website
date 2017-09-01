@@ -23,6 +23,7 @@ from accounts.views import (
     register_view,
     logout_view,
 )
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -33,6 +34,8 @@ urlpatterns = [
     #url(r'^', include("curiosoblog.urls", namespace='curiosoblog')),
     url(r'^curiosoblog/', include("curiosoblog.urls", namespace='curiosoblog')),
     url(r'^', include("home.urls", namespace='home')),
+    url('^', include('django.contrib.auth.urls')),
+
 ]
 
 

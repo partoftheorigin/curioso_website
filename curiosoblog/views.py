@@ -1,5 +1,5 @@
 from django.contrib.contenttypes.models import ContentType
-from urllib import quote_plus
+from urllib.parse import quote_plus
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse, HttpResponseRedirect, Http404

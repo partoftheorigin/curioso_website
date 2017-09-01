@@ -30,7 +30,7 @@
       {% if instance.user.get_full_name %}
         <p>Author: {{ instance.user.get_full_name }}</p>
       {% endif %}
-          <p>Category: {{ instance.category }}</p>
+
       <p>
         <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true">
         </div><hr/>
@@ -38,7 +38,7 @@
 
       <div class='row'>
         <div class='col-sm-12'>
-          <div class='post-detail-item'>{{ instance.get_markdown | safe}}</div>
+          <div class='post-detail-item'>{{ instance.get_markdown }}</div>
           <hr/>
           <br/>
           <div>
