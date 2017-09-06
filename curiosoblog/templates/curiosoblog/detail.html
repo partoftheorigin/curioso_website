@@ -29,6 +29,7 @@
 
       {% if instance.user.get_full_name %}
         <p>Author: {{ instance.user.get_full_name }}</p>
+        <p>: {{ instance.category }}</p>
       {% endif %}
 
       <p>
