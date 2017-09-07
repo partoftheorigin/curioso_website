@@ -1,1 +1,39 @@
-<h1>Hello</h1>
+{% extends 'home/base.html' %}
+{% block title %}Curioso{% endblock %}
+
+<body>
+{% block content %}
+<br><br><br>
+<div class="w3-container w3-grey">
+  <h3>Header</h3>
+      <div class="w3-container  w3-white w3-margin"><br>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeHpLqFVD23I4H4gT_xiy16uOHfPqFrgt1ih-QCRn4nYo_-tew" style="width:60px">
+        <h4>Solo Curioso</h4>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <a href="#"><i class="fa fa-facebook fa-2x"></i>&nbsp;</a> |&nbsp;
+         <a href="#"><i class="fa fa-twitter fa-2x"></i>&nbsp;</a> |&nbsp;
+         <a href="#"><i class="fa fa-linkedin-square fa-2x"></i>&nbsp;</a>
+      </div>
+</div>
+
+<div class="w3-container w3-padding-64" id="about">
+    <div class="w3-content">
+        <h1 class="w3-center " style="margin-bottom:64px">About</h1>
+        <p>The Pizza Restaurant was founded in blabla by Mr. Italiano in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p><strong>The Chef?</strong> Mr. Italiano himself<img src="/w3images/chef.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
+        <p>We are proud of our interiors.</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJHtq_nkUs1fHUQ2bXE8aGBVXkICZZJs7peYw1gBDbriKe2kOxA"  alt="Restaurant">
+    </div>
+    <div class="w3-content">
+        <h1 class="w3-center " style="margin-bottom:64px">About</h1>
+        <p>The Pizza Restaurant was founded in blabla by Mr. Italiano in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p><strong>The Chef?</strong> Mr. Italiano himself<img src="/w3images/chef.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
+        <p>We are proud of our interiors.</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJHtq_nkUs1fHUQ2bXE8aGBVXkICZZJs7peYw1gBDbriKe2kOxA"  alt="Restaurant">
+    </div>
+</div>
+
+{% endblock content %}
+</body>
+</html>

@@ -1,12 +1,11 @@
 {% extends "home/base.html" %}
+{% load staticfiles %}
 {% load crispy_forms_tags %}
 
 
 {% block content %}
 
-<div class="background-picture">
-
-
+<!--<div class="background-picture">-->
     <div class="container ">
         <div class='col-sm-6 col-sm-offset-3 '>
             <br><br>
@@ -16,11 +15,16 @@
                 <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
                     {{ form|crispy }}
                     <input type='submit'  class="btn btn-primary center-block" value='Signup' />
+                    <script>
+                    function myFunction() {
+                        alert("We appreciate your taking the time to share your opinions regarding our services. Thankyou!");
+                    }
+                    </script>
                     <hr/>
                     <p align="center">(We won't share anything without your permission)</p>
                 </form>
             <br>
         </div>
     </div>
-</div>
+<!--</div>-->
 {% endblock content %}

@@ -1,1 +1,30 @@
-<h1>Hello</h1>
+{% extends "home/base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<!--<div class="background-picture">-->
+    <div class="container ">
+        <div class='col-sm-6 col-sm-offset-3 '>
+            <br><br>
+            <h1 align="center">nvn</h1>
+            <p align="center">For better experience and regular updates Signup with curioso</p>
+            <hr/>
+                <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+                    {{ form|crispy }}
+                    <input type='submit'  class="btn btn-primary center-block" value='Signup' />
+                    <script>
+                    function myFunction() {
+                        alert("We appreciate your taking the time to share your opinions regarding our services. Thankyou!");
+                    }
+                    </script>
+                    <hr/>
+                    <p align="center">(We won't share anything without your permission)</p>
+                </form>
+            <br>
+        </div>
+    </div>
+<!--</div>-->
+{% endblock content %}
